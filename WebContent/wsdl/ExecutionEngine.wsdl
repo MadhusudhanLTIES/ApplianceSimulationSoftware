@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://DefaultNamespace" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://DefaultNamespace" xmlns:intf="http://DefaultNamespace" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://DefaultNamespace" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="CreateAnAppliance">
+    <complexType>
+     <sequence>
+      <element name="said" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="CreateAnApplianceResponse">
+    <complexType>
+     <sequence>
+      <element name="CreateAnApplianceReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="InstantiateAppliance">
+    <complexType>
+     <sequence>
+      <element name="said" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="InstantiateApplianceResponse">
+    <complexType>
+     <sequence>
+      <element name="InstantiateApplianceReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="StartApplainceCycle">
+    <complexType>
+     <sequence>
+      <element name="said" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="StartApplainceCycleResponse">
+    <complexType>
+     <sequence>
+      <element name="StartApplainceCycleReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="StopApplianceCycle">
+    <complexType>
+     <sequence>
+      <element name="said" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="StopApplianceCycleResponse">
+    <complexType>
+     <sequence>
+      <element name="StopApplianceCycleReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="RemoveAppliance">
+    <complexType>
+     <sequence>
+      <element name="said" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="RemoveApplianceResponse">
+    <complexType>
+     <sequence>
+      <element name="RemoveApplianceReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="GetSAIDs">
+    <complexType/>
+   </element>
+   <element name="GetSAIDsResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="GetSAIDsReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="InstantiateApplianceRequest">
+
+      <wsdl:part element="impl:InstantiateAppliance" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="InstantiateApplianceResponse">
+
+      <wsdl:part element="impl:InstantiateApplianceResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="CreateAnApplianceResponse">
+
+      <wsdl:part element="impl:CreateAnApplianceResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="CreateAnApplianceRequest">
+
+      <wsdl:part element="impl:CreateAnAppliance" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="StopApplianceCycleRequest">
+
+      <wsdl:part element="impl:StopApplianceCycle" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="StartApplainceCycleResponse">
+
+      <wsdl:part element="impl:StartApplainceCycleResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="GetSAIDsResponse">
+
+      <wsdl:part element="impl:GetSAIDsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="RemoveApplianceResponse">
+
+      <wsdl:part element="impl:RemoveApplianceResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="RemoveApplianceRequest">
+
+      <wsdl:part element="impl:RemoveAppliance" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="StopApplianceCycleResponse">
+
+      <wsdl:part element="impl:StopApplianceCycleResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="GetSAIDsRequest">
+
+      <wsdl:part element="impl:GetSAIDs" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="StartApplainceCycleRequest">
+
+      <wsdl:part element="impl:StartApplainceCycle" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="ExecutionEngine">
+
+      <wsdl:operation name="CreateAnAppliance">
+
+         <wsdl:input message="impl:CreateAnApplianceRequest" name="CreateAnApplianceRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:CreateAnApplianceResponse" name="CreateAnApplianceResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="InstantiateAppliance">
+
+         <wsdl:input message="impl:InstantiateApplianceRequest" name="InstantiateApplianceRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:InstantiateApplianceResponse" name="InstantiateApplianceResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="StartApplainceCycle">
+
+         <wsdl:input message="impl:StartApplainceCycleRequest" name="StartApplainceCycleRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:StartApplainceCycleResponse" name="StartApplainceCycleResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="StopApplianceCycle">
+
+         <wsdl:input message="impl:StopApplianceCycleRequest" name="StopApplianceCycleRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:StopApplianceCycleResponse" name="StopApplianceCycleResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="RemoveAppliance">
+
+         <wsdl:input message="impl:RemoveApplianceRequest" name="RemoveApplianceRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:RemoveApplianceResponse" name="RemoveApplianceResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetSAIDs">
+
+         <wsdl:input message="impl:GetSAIDsRequest" name="GetSAIDsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:GetSAIDsResponse" name="GetSAIDsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ExecutionEngineSoapBinding" type="impl:ExecutionEngine">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="CreateAnAppliance">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="CreateAnApplianceRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="CreateAnApplianceResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="InstantiateAppliance">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="InstantiateApplianceRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="InstantiateApplianceResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="StartApplainceCycle">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="StartApplainceCycleRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="StartApplainceCycleResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="StopApplianceCycle">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="StopApplianceCycleRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="StopApplianceCycleResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="RemoveAppliance">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="RemoveApplianceRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="RemoveApplianceResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetSAIDs">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="GetSAIDsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="GetSAIDsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ExecutionEngineService">
+
+      <wsdl:port binding="impl:ExecutionEngineSoapBinding" name="ExecutionEngine">
+
+         <wsdlsoap:address location="http://localhost:8086/ApplianceSimulationSoftware/services/ExecutionEngine"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
